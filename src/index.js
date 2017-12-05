@@ -66,7 +66,13 @@ function makeCheckChat() {
         const lastReference = currentChatReference;
         const currentChat = getCurrentChat();
 
-        if (currentChat && currentChat === lastReference) return false;
+        if (currentChat && currentChat === lastReference) {
+            return false;
+        }
+        if (lastReference && currentChat.props.channelID.toString() === lastReference.props.channelID.toString()) {
+            return false;
+        }
+
         currentChatReference = currentChat;
 
         return true;
