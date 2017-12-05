@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Twitch BetterTTV without extension and better dark theme
 // @namespace    http://tampermonkey.net/
-// @version      1.0.8
+// @version      1.0.9
 // @description  This script load bttv without having to download the extension; Also have a better dark theme, try it!
 // @author       Daybr3akz
 // @license      MIT
@@ -25,13 +25,15 @@ const css = [ '<style>',
     '.video-player--theatre.video-player--fullscreen .video-player__container {',
     '    bottom: 0rem!important',
     '}</style>'].join('\n');
-document.head.appendChild($(css)[0]);
 
 (function betterttv() {
     const script = document.createElement('script');
     script.type = 'text/javascript';
     script.src = 'https://cdn.betterttv.net/betterttv.js';
-    script.onload = () => console.log('BetterTTV loaded');
+    script.onload = () => {
+        console.log('BetterTTV loaded');
+        document.head.appendChild($(css)[0]);
+    };
     const head = document.getElementsByTagName('head')[0];
     if (!head) return;
     head.appendChild(script);

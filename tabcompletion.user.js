@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Twitch Tab Completion (compatible with BTTV)
 // @namespace    https://openuserjs.org/users/daybreakz
-// @version      1.0.8
+// @version      1.0.9
 // @description  Tab completion for emotes (and users) also add chat history. BetterTTV
 // @author       Daybr3akz
 // @license      MIT
@@ -1171,13 +1171,11 @@ var ChatHistoryModule = function () {
 
             if (keyCode === 'ArrowUp') {
                 if (isSuggestionsShowing()) return;
-                // if ($inputField[0].selectionStart > 0) return;
+                if ($inputField[0].selectionStart > 0) return;
                 if (this.historyPos + 1 === this.messageHistory.length) return;
                 var prevMsg = this.messageHistory[++this.historyPos];
                 setInputValue(prevMsg);
-                setTimeout(function () {
-                    $inputField[0].setSelectionRange(prevMsg.length, prevMsg.length);
-                }, 0);
+                $inputField[0].setSelectionRange(0, 0);
             } else if (keyCode === 'ArrowDown') {
                 if (isSuggestionsShowing()) return;
                 if ($inputField[0].selectionStart < $inputField.val().length) return;
