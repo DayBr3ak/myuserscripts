@@ -11,3 +11,7 @@
 // @grant        none
 // ==/UserScript==
 
+// // ==OpenUserJS==
+// @author daybreakz
+// ==/OpenUserJS==
+

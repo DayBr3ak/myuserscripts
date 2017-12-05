@@ -10,6 +10,10 @@
 // @grant        none
 // ==/UserScript==
 
+// // ==OpenUserJS==
+// @author daybreakz
+// ==/OpenUserJS==
+
 /*
  * This user script loads 2 external scripts aka
  * https://cdn.betterttv.net/betterttv.js ,see https://github.com/night/BetterTTV
