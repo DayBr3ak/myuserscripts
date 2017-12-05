@@ -28,11 +28,13 @@ class ChatHistoryModule {
 
         if (keyCode === 'ArrowUp') {
             if (isSuggestionsShowing()) return;
-            if ($inputField[0].selectionStart > 0) return;
+            // if ($inputField[0].selectionStart > 0) return;
             if (this.historyPos + 1 === this.messageHistory.length) return;
             const prevMsg = this.messageHistory[++this.historyPos];
             setInputValue(prevMsg);
-            $inputField[0].setSelectionRange(0, 0);
+            setTimeout(() => {
+                $inputField[0].setSelectionRange(prevMsg.length, prevMsg.length);
+            }, 0);
         } else if (keyCode === 'ArrowDown') {
             if (isSuggestionsShowing()) return;
             if ($inputField[0].selectionStart < $inputField.val().length) return;

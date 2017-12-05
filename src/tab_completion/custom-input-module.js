@@ -11,21 +11,12 @@ function setReactTextareaValue(txt, msg) {
 }
 
 function newTextArea() {
-    // Replaces Twitch Text Input with our own
-    const text = document.createElement('textarea');
     const $oldText = $(ORIGINAL_TEXTAREA);
-    $oldText[0].before(text);
-    const $text = $(text);
-
-    Array.from($oldText[0].attributes)
-        .map(attrEl => attrEl.name)
-        .forEach(attr => {
-            const v = $oldText.attr(attr);
-            $text.attr(attr, v);
-        });
+    const $text = $oldText.clone().insertBefore(ORIGINAL_TEXTAREA);
     $text.attr('id', 'bttv-chat-input');
     $oldText.attr('id', 'twitch-chat-input');
     $oldText.hide();
+    $text.focus();
 
     $text[0].customSetValue = value => {
         $text.val(value);
@@ -104,11 +95,7 @@ export default class CustomInputModule {
             userList.sort();
         }
 
-        // if (settings.get('tabCompletionEmotePriority') === true) {
         return [ ...emoteList, ...userList];
-        // } else {
-        // return [...userList, ...emoteList];
-        // }
     }
 
     onKeydown(e, includeUsers) {

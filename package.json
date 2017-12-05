@@ -6,6 +6,7 @@
   "scripts": {
     "babel": "babel src/index.js -o build/main.bundle.js --presets=es2015",
     "webpack": "webpack",
+    "build": "webpack && node make_userscript.js",
     "//lint": "eslint"
   },
   "author": "",
