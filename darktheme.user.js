@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Twitch BetterTTV without extension and better dark theme
 // @namespace    http://tampermonkey.net/
-// @version      1.0.4
+// @version      1.0.5
 // @description  This script load bttv without having to download the extension; Also have a better dark theme, try it!
 // @author       Daybr3akz
 // @license      MIT
