@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Twitch Tab Completion (compatible with BTTV)
 // @namespace    https://openuserjs.org/users/daybreakz
-// @version      1.0.6
+// @version      1.0.7
 // @description  Tab completion for emotes (and users) also add chat history. BetterTTV
 // @author       Daybr3akz
 // @license      MIT
