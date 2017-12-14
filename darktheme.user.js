@@ -2,7 +2,7 @@
 // @run-at       document-start
 // @name         Twitch BetterTTV without extension
 // @namespace    http://tampermonkey.net/
-// @version      1.0.12
+// @version      1.1.0
 // @description  This script load bttv without having to download the extension;
 // @author       Daybr3akz
 // @license      MIT
@@ -15,7 +15,6 @@
 // ==/OpenUserJS==
 
 const BTTV_URL = 'https://cdn.betterttv.net/betterttv.js';
-const DEFAULT_DARK_THEME = 'https://userstyles.org/styles/userjs/148766/dark-theme-for-twitchtv.user.js';
 
 /*
  * This user script loads 1 external scripts aka
